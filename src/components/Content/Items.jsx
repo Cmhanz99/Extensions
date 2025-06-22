@@ -1,11 +1,11 @@
 import React from "react";
-import { data } from "../../data/boxdata";
 import Button from "./Buttons";
 
-const Items = ({ light }) => {
+const Items = ({ light, box }) => {
+
   return (
     <>
-      {data.map((item) => (
+      {box.map((item) => (
         <div
           className={`border ${
             light
@@ -19,7 +19,7 @@ const Items = ({ light }) => {
             ></div>
             <div className="flex-1">
               <h2 className="font-semibold">{item.title}</h2>
-              <p className="text-sm">{item.desc}</p>
+              <p className="text-sm line-clamp-2">{item.desc}</p>
             </div>
           </div>
           <Button isActive={item.isActive} light={light}/>
