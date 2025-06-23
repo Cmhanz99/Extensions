@@ -1,10 +1,16 @@
 import React from "react";
 import { actives } from "../../data/boxdata";
 
-const Content = ({light}) => {
+const Content = ({ light }) => {
   return (
     <div className="mt-10 flex md:flex-row gap-4 flex-col justify-between items-center">
-      <h2 className={`${light ? 'text-white' : 'text-black'} text-2xl font-semibold`}>Extensions List</h2>
+      <h2
+        className={`${
+          light ? "text-white" : "text-black"
+        } text-2xl font-semibold`}
+      >
+        Extensions List
+      </h2>
       <div className="flex items-center gap-2">
         {actives.map((item) => (
           <Active isActive={item.isActive} title={item.title} />

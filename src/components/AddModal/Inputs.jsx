@@ -20,6 +20,7 @@ const Inputs = ({box, setBox, setOpenModal}) => {
     setBox([...box, newNotes]);
     setTitle("");
     setDescription("");
+    alert("Notes Added!")
     setOpenModal(false);
   }
 

@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Buttons";
 
-const Items = ({ light, box }) => {
-
+const Items = ({ light, box, setBox }) => {
+  const removedNote = (id) => {
+    const item = box.filter((item) => item.id !== id);
+    setBox(item);
+  };
+  const toggleActive = (id) => {
+    setBox((prevBox) =>
+      prevBox.map((note) =>
+        note.id === id ? { ...note, isActive: !note.isActive } : note
+      )
+    );
+  };
   return (
     <>
       {box.map((item) => (
@@ -22,7 +32,13 @@ const Items = ({ light, box }) => {
               <p className="text-sm line-clamp-2">{item.desc}</p>
             </div>
           </div>
-          <Button isActive={item.isActive} light={light}/>
+          <Button
+            isActive={item.isActive}
+            light={light}
+            id={item.id}
+            toggleActive={toggleActive}
+            removedNote={removedNote}
+          />
         </div>
       ))}
     </>
