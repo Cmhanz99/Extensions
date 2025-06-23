@@ -28,7 +28,7 @@ function App() {
 
   return (
     <main
-      className={`w-full h-screen bg-fixed py-10 flex items-center justify-center relative
+      className={`w-full md:h-screen h-auto bg-fixed py-10 flex items-center justify-center relative
       ${
         light
           ? "bg-linear-to-t from-slate-800 to-slate-950"
